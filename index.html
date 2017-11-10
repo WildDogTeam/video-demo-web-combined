@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>野狗 - video 示例</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <!-- build:css(public) /styles/product/video-demo-meeting.css -->
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/meeting.css">
+    <link rel="stylesheet" href="/styles/toolbar.css">
+    <!-- endbuild -->
+</head>
+
+<body>
+    <header class="header clearfix">
+        <div class="info">
+            <div class="item bower">Chrome</div>
+        </div>
+        <div class="btns">
+            <div class="item copy">
+                <span class="copy-tip"><img src='/images/copy-tip.svg'> 会议链接已复制到剪贴板</span>
+                <div id='copy-btn' data-clipboard-text=''>邀请他人</div>
+            </div>
+            <div class="item leave">离开房间</div>
+        </div>
+    </header>
+    <nav class="demo-video">
+        <div class="clearfix video-boxs">
+            <div class="video-local">
+                <video autoplay class="video" data-streamId=""></video>
+            </div>
+            <div class="video-local">
+                <video autoplay class="video" data-streamId=""></video>
+            </div>
+            <div class="video-local">
+                <video autoplay class="video" data-streamId=""></video>
+            </div>
+            <div class="video-local">
+                <video autoplay class="video" data-streamId=""></video>
+            </div>
+            <div class="video-local">
+                <video autoplay class="video" data-streamId=""></video>
+            </div>
+            <div class="video-local">
+                <video autoplay class="video" data-streamId=""></video>
+            </div>
+            <div class="video-local">
+                <video autoplay class="video" data-streamId=""></video>
+            </div>
+            <div class="video-local">
+                <video autoplay class="video" data-streamId=""></video>
+            </div>
+        </div>
+    </nav>
+    <div class="content clearfix">
+        <section>
+            <div class="board-style">
+                <div id="canvas"></div>
+                <div id="tool-tip" class="tool-tip" hidden=true>
+                    <img src="/images/board/finish-btn.svg" draggable="false" class="tooltip-x" id="close-tool-tip-btn">
+                    <img src="/images/board/toolTip_clear.png" draggable="false" class="tooltip-img">
+                    <span class="tooltip-text">
+                        确定清空全部内容？
+                    </span>
+                    <div style="margin:0 auto;width:302px;">
+                        <div type="button" name="button" id="tooltip-confirm-btn" class="btn confirm-btn">确认</div>
+                        <div type="button" name="button" id="tooltip-cancel-btn" class="btn cancel-btn">取消</div>
+                    </div>
+                </div>
+                <div style="margin:0 auto;width:700px;position: relative;">
+                    <div class='tool-bar'>
+                        <image src='/images/board/boardTool_pen.png' class='tool' id="Pen" draggable="false"></image>
+                        <image src='/images/board/boardTool_line.png' class='tool' id="Line" draggable="false"></image>
+                        <image src='/images/board/boardTool_rect.png' class='tool' id="Rect" draggable="false"></image>
+                        <image src='/images/board/boardTool_circle.png' class='tool' id="Circle" draggable="false"></image>
+                        <image src='/images/board/boardTool_image.png' class='tool' id="Image" draggable="false"></image>
+                        <image src='/images/board/boardTool_text.png' class='tool' id="IText" draggable="false"></image>
+                        <image src='/images/board/boardTool_undo.png' class='tool' id="Undo" draggable="false"></image>
+                        <image src='/images/board/boardTool_clear.png' draggable="false" class='tool' id="Clear"></image>
+                    </div>
+                    <div class="tool-style" id="tool-style">
+                        <div class="stroke-size-div" id="stroke-size-div">
+                            <image src='/images/board/boardTool_small-circle.png' draggable="false" class='stroke-width size-select-frame' id="stroke-width-0"></image>
+                            <image src='/images/board/boardTool_mid-circle.png' draggable="false" class='stroke-width' id="stroke-width-1"></image>
+                            <image src='/images/board/boardTool_big-circle.png' draggable="false" class='stroke-width' id="stroke-width-2"></image>
+                        </div>
+                        <div class="font-size-div" id="font-size-div" hidden="">
+                            <image src='/images/board/boardTool_small-A.png' draggable="false" class='stroke-width' id="font-size-0"></image>
+                            <image src='/images/board/boardTool_mid-A.png' draggable="false" class='stroke-width' id="font-size-1"></image>
+                            <image src='/images/board/boardTool_big-A.png' draggable="false" class='stroke-width' id="font-size-2"></image>
+                        </div>
+                        <div class='stroke-color' id="color-5" style="background-color: #0b0b0b;"></div>
+                        <div class='stroke-color' id="color-4" style="background-color: #cbcbcb;"></div>
+                        <div class='stroke-color' id="color-3" style="background-color: #1680fa;"></div>
+                        <div class='stroke-color' id="color-2" style="background-color: #51d76a;"></div>
+                        <div class='stroke-color' id="color-1" style="background-color: #fd9527;"></div>
+                        <div class='stroke-color color-select-frame' id="color-0" style="background-color: #fd3e39;"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <aside>
+            <div class="chat clearfix">
+            </div>
+            <div class="send">
+                <input type="text" class="send_input" placeholder="老师，请教您一个问题！">
+                <button class="send_btn">发 送</button>
+            </div>
+        </aside>
+        <div class="failed-tip">
+            <div class="failed-tip-heard">Oops!</div>
+            <div class="failed-tip-reason">未检测到可用的音视频设备，请检查设备。</div>
+            <button class="btn return-btn">确 定</button>
+        </div>
+    </div>
+    <script>
+    /**
+     * [config description]
+     * @videoURL videoAppid
+     * @authDomain authAppid
+     * @syncURL syncAppid
+     * @boardURL boardAppid
+     * auth、sync、board的appid可以一样
+     * 如果需要体验图片上传服务，请填写下面的信息
+     * 七牛上传会根据以下生成token
+     * @domainUrl 七牛cdnUrl
+     * @accessKey 七牛accessKey
+     * @secretKey 七牛secretKey
+     * @putPolicy.scope 七牛bucket
+     * @putPolicy.deadline token超时时间(时间戳)
+     */
+    // npm install http-server -g
+    // hs -o -S
+    var config = {
+        videoURL: "appId",
+        boardURL: "appId",
+        authDomain: "appId.wilddog.com",
+        syncURL: "https://appId.wilddogio.com",
+        domainUrl: "",
+        accessKey: "",
+        secretKey: "",
+        putPolicy: {
+            "scope": "",
+            "deadline": 00
+        }
+    }
+    </script>
+    <script src="/scripts/vendor/jquery.min.js"></script>
+    <script src="https://cdn.wilddog.com/sdk/js/2.5.5/wilddog.js"></script>
+    <script src="https://cdn.wilddog.com/sdk/js/2.1.3/wilddog-video-room.js"></script>
+    <script src='https://cdn.wilddog.com/sdk/js/v2/current/wilddog-board.js'></script>
+    <!-- 粘贴url -->
+    <script src="/scripts/vendor/clipboard.min.js"></script>
+    <!-- 检查浏览器 -->
+    <script src="/scripts/checkBrowser.js"></script>
+    <script src="/scripts/meeting.js"></script>
+    <!-- 七牛文件上传 -->
+    <!-- <script src="/scripts/vendor/plupload/js/moxie.js"></script> -->
+    <!-- <script src="/scripts/vendor/plupload/js/plupload.dev.js"></script> -->
+    <!-- <script src="/scripts/vendor/plupload/js/i18n/zh_CN.js"></script> -->
+    <!-- <script src='/scripts/CryptoJS.js'></script> -->
+    <!-- <script src='/scripts/genUpToken.js'></script> -->
+    <!-- <script src='/scripts/qiniu.js'></script> -->
+    <!-- <script src='/scripts/imageUpload.js'></script> -->
+    <!-- 白板初始化 -->
+    <script src='/scripts/toolbar.js'></script>
+    <script>
+    wd.video.init()
+    </script>
+</body>
+
+</html>

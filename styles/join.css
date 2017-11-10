@@ -1,0 +1,289 @@
+/*
+* @Author: ihoey
+* @Date:   2017-11-09 15:52:54
+* @Last Modified by:   ihoey
+* @Last Modified time: 2017-11-09 18:54:04
+*/
+body {
+  letter-spacing: 0;
+  line-height: 1.5;
+  background: url("/images/product/video-demo/background-2.svg") 0 0 no-repeat;
+  background-attachment: fixed;
+}
+
+.overview-title {
+  line-height: 1;
+  color: #212121;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.line {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.join-div {
+  margin: 70px 0;
+  padding-bottom: 70px;
+}
+
+.join-div .qcode {
+  width: 300px;
+  height: 400px;
+}
+
+.join-div .qcode .qcode_title {
+  width: 44px;
+  line-height: 1.5;
+  font-size: 22px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.join-div .qcode .download_ios {
+  text-align: justify;
+}
+
+.join-div .qcode .qcode_box {
+  width: 128px;
+  height: 128px;
+  border-radius: 2px;
+  border: 9px solid #e8e9eb;
+  box-sizing: border-box;
+}
+
+.join-div .qcode .qcode_box img {
+  border: 6px solid #fff;
+  box-sizing: border-box;
+}
+
+.join-div .join-select {
+  margin-top: 50px;
+}
+
+.join-div .join-select .item {
+  position: relative;
+  margin: 25px auto;
+}
+
+.join-div .join-select .item .select-word {
+  cursor: pointer;
+}
+
+.join-div .join-select .item .join-btn {
+  width: 180px;
+  height: 40px;
+}
+
+.join-div .join-select .item .join-btn:hover {
+  background-color: rgba(230, 80, 30, 0.8);
+}
+
+.join-div .join-select .item:last-child {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.join-div .join-select input {
+  margin: 0;
+  padding: 0;
+  width: 315px;
+  height: 38px;
+  padding-left: 5px;
+  border-radius: 3px;
+  border: 1px solid #bbb;
+  outline: none;
+}
+
+.join-div .join-select .room-list {
+  position: absolute;
+  top: 38px;
+  z-index: 9;
+  background-color: #fff;
+  padding: 0;
+  text-indent: 5px;
+  margin: 0;
+  width: 315px;
+  border: 1px solid #ccc;
+  display: none;
+}
+
+.join-div .join-select .room-list li {
+  line-height: 2;
+  cursor: pointer;
+}
+
+.join-div .join-select .room-list li:hover {
+  background-color: rgba(102, 102, 102, 0.15);
+}
+
+.title {
+  color: #e6501e;
+  font-size: 36px;
+  text-align: center;
+}
+
+.mobile_content {
+  display: none;
+}
+
+.content {
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.content .left_img {
+  width: 570px;
+}
+
+.content .right_text {
+  margin-top: 40px;
+  width: 315px;
+}
+
+.content .right_text .summary_title {
+  width: 44px;
+  line-height: 1.5;
+  font-size: 22px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.content .right_text .summary_content {
+  text-align: justify;
+}
+
+.content .right_text .download_title {
+  margin-top: 30px;
+  font-size: 34px;
+  line-height: 1.3;
+}
+
+.content .right_text .download_ios,
+.content .right_text .download_android {
+  position: relative;
+  margin-top: 10px;
+}
+
+.content .right_text .download_ios .download_btn,
+.content .right_text .download_android .download_btn {
+  background-color: #fb8d35;
+}
+
+.content .right_text .download_ios .download_btn:hover,
+.content .right_text .download_android .download_btn:hover {
+  background-color: rgba(251, 141, 53, 0.8);
+}
+
+.content .right_text .download_android .download_btn {
+  background-color: #fcd53c;
+}
+
+.content .right_text .download_android .download_btn:hover {
+  background-color: rgba(252, 213, 60, 0.8);
+}
+
+.content .right_text .download_content .qcode_box {
+  width: 128px;
+  height: 128px;
+  border-radius: 2px;
+  border: 9px solid #e8e9eb;
+  box-sizing: border-box;
+}
+
+.content .right_text .download_content .qcode_box img {
+  border: 6px solid #fff;
+  box-sizing: border-box;
+}
+
+.content .right_text .download_content .download_btn {
+  position: absolute;
+  top: 50%;
+  margin-left: 20px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 164px;
+  height: 44px;
+  line-height: 44px;
+  border-radius: 22px;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  padding-left: 30px;
+  box-sizing: border-box;
+}
+
+.content .right_text .download_content .download_btn img {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+.footer .rm-l-p.rm-r-p {
+  display: none;
+}
+
+.footer .footer-info {
+  margin-top: 0;
+}
+
+@media (max-width: 480px) {
+  .join-div .qcode {
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+  }
+  .join-div .qcode .qcode_title {
+    display: block;
+    width: 100%;
+    border-bottom: none;
+  }
+  .join-div .qcode .download_ios {
+    text-align: center;
+  }
+  .join-div .qcode .qcode_box {
+    margin: 0 auto;
+    float: none;
+  }
+  .join-div .join-select {
+    width: 100%;
+    padding: 0 30px;
+  }
+  .join-div .join-select input {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .join-div .join-select .room-list {
+    width: 100%;
+  }
+  .content .left_img {
+    width: 100%;
+  }
+  .content .left_img img {
+    width: 100%;
+  }
+  .content .right_text {
+    width: 100%;
+  }
+  .content .right_text .summary_title {
+    display: block;
+    width: 100%;
+    border-bottom: none;
+    text-align: center;
+  }
+  .content .right_text .summary_content {
+    text-align: center;
+  }
+  .content .right_text .download_title {
+    text-align: center;
+  }
+  .content .right_text .download_content {
+    padding-left: 25px;
+  }
+  .footer {
+    background-color: #FFF;
+  }
+}

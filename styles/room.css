@@ -1,0 +1,571 @@
+/*
+* @Author: ihoey
+* @Date:   2017-11-09 17:16:29
+* @Last Modified by:   ihoey
+* @Last Modified time: 2017-11-09 17:16:30
+*/
+body {
+    background-color: #414141;
+}
+
+body>div.header {
+    background-color: #414141;
+    width: 100%;
+    padding-top: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+body>div.header>div {
+    padding: 14px 0 9px;
+}
+
+.header .container {
+    border-bottom: 0px solid #e5e5e5;
+}
+
+.header-user {
+    padding-top: 10px;
+    padding-left: 0px;
+}
+
+.pull-left {
+    padding-right: 20px;
+}
+
+.pull-left:hover {
+    cursor: pointer;
+}
+
+.pull-right {
+    letter-spacing: 0px;
+    padding-right: 10px;
+    position: relative;
+}
+
+.pull-right:hover {
+    cursor: pointer;
+}
+
+.demo-backgroud {
+    background: url('/images/product/video-demo/video-demo-bg.svg') no-repeat center 135px;
+    background-size: 100%;
+    overflow-x: hidden;
+    height: 940px;
+    padding-top: 50px;
+}
+
+.back-img {
+    margin-top: -100px;
+    opacity: 0.6;
+    position: absolute;
+    z-index: -1;
+}
+
+.video-container {
+    margin: 0 auto;
+    height: 686px;
+    width: 980px;
+    border-radius: 8px;
+}
+
+.failed-tip {
+    display: none;
+    background-color: white;
+    width: 335px;
+    height: 172px;
+    position: fixed!important;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border: 1px solid #32af5a;
+    border-radius: 3px;
+    z-index: 5;
+}
+
+.failed-tip-heard {
+    color: #32af5a;
+    margin-top: 12px;
+    margin-left: 125px;
+    font-size: 26px;
+    font-family: fzltxh;
+    letter-spacing: 0.05em;
+}
+
+.failed-tip-reason {
+    margin-left: 20px;
+    letter-spacing: 0.05em;
+}
+
+.return-btn {
+    width: 120px;
+    margin-top: 20px;
+    margin-left: 107px;
+    font-size: 16px;
+}
+
+.return-btn:hover {
+    background-color: #eb734b;
+    border-color: #dc5528;
+}
+
+.return-btn:active {
+    background-color: #f0916e;
+    border-color: #e67855;
+}
+
+.copy-btn {
+    color: #666;
+    border: 0px;
+    height: 20px;
+    width: 90px;
+    line-height: inherit;
+    background: none;
+}
+
+.copy-btn:hover {
+    color: #e6501e;
+}
+
+.copy-btn:visited {
+    text-shadow: none;
+}
+
+.current-url {
+    margin-top: -200px;
+    position: absolute;
+    border: 0px;
+    color: white;
+}
+
+.copy-tip {
+    color: #32af5a;
+    font-size: 10px;
+    position: absolute;
+    top: 30px;
+    right: 80px;
+    width: 165px;
+    opacity: 0;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+    text-align: left;
+}
+
+.copy-tip:hover {
+    cursor: default;
+}
+
+.copy-tip-img {
+    margin-top: -3px;
+}
+
+.video-container>div>div {
+    position: relative;
+}
+
+.video-container div div.controls {
+    display: none;
+    width: 38px;
+    position: absolute;
+    right: 0;
+    bottom: 5%;
+    z-index: 22;
+    text-align: center;
+    background-color: rgba(81, 81, 81, .5);
+    padding: 10px 10px;
+    border-radius: 3px 0 0 3px;
+    /* display: none; */
+    margin-right: -9px;
+}
+
+.mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 20;
+    margin: 10px;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    display: none;
+    background-color: #666666;
+}
+
+#copy-btn,
+div.header>div>ul>li>a {
+    color: #fff;
+}
+
+.media i,
+.fullscreen i,
+.close i,
+.barragectl i {
+    display: block;
+    height: 30px;
+    width: 21px;
+    background: url('/images/product/video-demo/icon-btn-video-dome.svg') no-repeat;
+}
+
+.controls i:hover {
+    opacity: .7;
+}
+
+.media i {
+    background-position: -23px 7px;
+}
+
+.media i.active {
+    background-position: -49px 7px;
+}
+
+.fullscreen i {
+    background-position: 3px 7px;
+}
+
+.fullscreen i.active {
+    background-position: 3px -21px;
+}
+
+.close i {
+    background-position: -23px -20px;
+}
+
+.close i.active {
+    background-position: -51px -20px;
+}
+
+.barragectl i {
+    background-position: -106px 8px;
+}
+
+.barragectl i.active {
+    background-position: -77px 8px;
+}
+
+video {
+    min-width: 100%;
+    max-width: 940px;
+    min-height: 100%;
+    border: 1px solid rgba(255, 255, 255, .5);
+}
+
+
+
+/* 一個視頻 */
+
+.videos-line1-1 {
+    margin: 0px auto;
+    width: 94vh;
+    /* height: 529px; */
+}
+
+#videos-line1>div,
+#videos-line2>div,
+.videos-line1-1~#videos-line2,
+.videos-line1-2~#videos-line2,
+.videos-line1-2~#videos-line2>div {
+    display: none;
+}
+
+.videos-line1-1 #localParticipant,
+.videos-line1-1 #localParticipant video {
+    float: left;
+    /* margin: 10px; */
+    width: 89vh;
+    height: 50vh;
+    /* border-radius: 5px; */
+    display: block;
+}
+
+.videos-line1-1 #localParticipant .controls {
+    margin-right: 1px;
+}
+
+.videos-line1-1 #localParticipant .d_show {
+    margin: 0;
+}
+
+.videos-line1-1 #localParticipant .mask {
+    margin: 0;
+}
+
+.videos-line1-1 #localParticipant video {
+    border-radius: 0px;
+    margin: 0;
+}
+
+
+
+/* 兩個視頻 */
+
+.videos-line1-2 {
+    margin: 0px auto;
+    width: 980px;
+    height: 264px;
+}
+
+.videos-line1-2 #localParticipant,
+.videos-line1-2 #localParticipant video,
+.videos-line1-2 #remoteParticipant-0,
+.videos-line1-2 #remoteParticipant-0 video {
+    float: left;
+    margin: 10px;
+    width: 470px;
+    height: 264px;
+    display: block;
+}
+
+.videos-line1-2~.barswitch {
+    margin: 20px 0;
+}
+
+
+
+/* 三個視頻 */
+
+.videos-line1-3 {
+    margin: 0px auto;
+    width: 400px;
+    height: 225px;
+}
+
+.videos-line1-3 #localParticipant,
+.videos-line1-3 #localParticipant video,
+.videos-line2-34 #remoteParticipant-2,
+.videos-line2-34 #remoteParticipant-2 video,
+.videos-line2-34 #remoteParticipant-3,
+.videos-line2-34 #remoteParticipant-3 video {
+    float: left;
+    margin: 10px;
+    width: 400px;
+    height: 225px;
+    display: block;
+}
+
+.videos-line2-34~.barswitch {
+    margin-right: 70px;
+}
+
+
+
+
+/* 四個視頻 */
+
+.videos-line1-4 {
+    margin: 0px auto;
+    width: 840px;
+    height: 225px;
+}
+
+.videos-line1-4 #localParticipant,
+.videos-line1-4 #localParticipant video,
+.videos-line1-4 #remoteParticipant-0,
+.videos-line1-4 #remoteParticipant-0 video,
+.videos-line2-34 #remoteParticipant-2,
+.videos-line2-34 #remoteParticipant-2 video,
+.videos-line2-34 #remoteParticipant-3,
+.videos-line2-34 #remoteParticipant-3 video {
+    float: left;
+    margin: 10px;
+    width: 400px;
+    height: 225px;
+    display: block;
+}
+
+
+
+
+/* 五個視頻 */
+
+.videos-line1-5 {
+    margin: 0px auto;
+    width: 640px;
+    height: 169px;
+}
+
+.videos-line1-5 #localParticipant,
+.videos-line1-5 #localParticipant video,
+.videos-line1-5 #remoteParticipant-0,
+.videos-line1-5 #remoteParticipant-0 video,
+.videos-line2-56 #remoteParticipant-2,
+.videos-line2-56 #remoteParticipant-2 video,
+.videos-line2-56 #remoteParticipant-3,
+.videos-line2-56 #remoteParticipant-3 video,
+.videos-line2-56 #remoteParticipant-4,
+.videos-line2-56 #remoteParticipant-4 video {
+    float: left;
+    margin: 10px;
+    width: 300px;
+    height: 169px;
+    display: block;
+}
+
+
+
+/* 六个視頻 */
+
+.videos-line1-6 {
+    margin: 0px auto;
+    width: 980px;
+    height: 169px;
+}
+
+.videos-line1-6 #localParticipant,
+.videos-line1-6 #localParticipant video,
+.videos-line1-6 #remoteParticipant-0,
+.videos-line1-6 #remoteParticipant-0 video,
+.videos-line1-6 #remoteParticipant-1,
+.videos-line1-6 #remoteParticipant-1 video,
+.videos-line2-56 #remoteParticipant-2,
+.videos-line2-56 #remoteParticipant-2 video,
+.videos-line2-56 #remoteParticipant-3,
+.videos-line2-56 #remoteParticipant-3 video,
+.videos-line2-56 #remoteParticipant-4,
+.videos-line2-56 #remoteParticipant-4 video {
+    float: left;
+    margin: 10px;
+    width: 300px;
+    height: 169px;
+    display: block;
+}
+
+.videos-line2-34 {
+    margin: 0px auto;
+    width: 840px;
+    height: 225px;
+}
+
+.videos-line2-56 {
+    margin: 0px auto;
+    width: 980px;
+    height: 169px;
+}
+
+
+
+
+/* 弹幕 */
+
+.barswitch {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+    height: 50px;
+}
+
+input {
+    height: 36px;
+    border-radius: 3px;
+    border: none;
+    outline: none
+}
+
+.barswitch .s_txt {
+    padding-left: 10px;
+    width: 270px;
+    background-color: #ffffff;
+    margin-right: 20px;
+}
+
+.barswitch .s_sub {
+    width: 100px;
+}
+
+.d_show {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    overflow: hidden;
+    display: none;
+    margin: 10px;
+}
+
+.d_show marquee {
+    position: absolute;
+}
+
+@media screen and (max-width: 767px) {
+    body>div.header {
+        padding-top: 18px;
+    }
+    .demo-backgroud {
+        height: inherit !important;
+    }
+    .video-container,
+    .videos-line1-1,
+    #localParticipant,
+    #localParticipant video,
+    #remoteParticipant-0,
+    #remoteParticipant-0 video,
+    #remoteParticipant-1,
+    #remoteParticipant-1 video,
+    #remoteParticipant-2,
+    #remoteParticipant-2 video,
+    #remoteParticipant-3,
+    #remoteParticipant-3 video,
+    #remoteParticipant-4,
+    #remoteParticipant-4 video,
+    .videos-line2-34,
+    .videos-line1-2,
+    .videos-line1-4,
+    .videos-line1-5,
+    .videos-line2-56,
+    .videos-line1-6,
+    .videos-line1-3 {
+        height: inherit !important;
+        width: inherit !important;
+        margin: 0 20px;
+    }
+    .video-container {
+        margin: 13.6vh auto;
+    }
+    .videos-line1-1,
+    #videos-line2 {
+        margin: 0 20px;
+    }
+    .videos-line1-1 #localParticipant,
+    .videos-line1-1 #localParticipant video {
+        float: none;
+    }
+    .video-container>div>div {
+        margin-bottom: 20px;
+    }
+    #localParticipant {
+        margin-bottom: 30px;
+    }
+    video {
+        max-width: 100%;
+    }
+    #copy-btn {
+        float: left;
+        margin-left: 30vw;
+    }
+    .login {
+        font-size: 12px;
+        color: #999;
+    }
+    .header-user {
+        display: inherit;
+    }
+    .current-url {
+        width: 50px;
+    }
+    .video-container div div.controls {
+        margin-right: 0;
+    }
+    .barswitch .s_txt {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
