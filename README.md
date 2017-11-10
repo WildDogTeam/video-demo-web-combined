@@ -42,7 +42,7 @@ var config = {
 }
 ```
 
-## 4. 启动本地 Web 服务
+## 5. 启动本地 Web 服务
 
 启动本地 Web 服务，建立 https 环境。快速入门中采用 Node.js 搭建本地服务，用户也可以使用其他方式启动本地 Web 服务。使用 Node.js 开启本地 Web 服务：
 
@@ -50,13 +50,18 @@ var config = {
 node https_channel_server.js
 ```
 
-## 5. 在浏览器中打开页面
+## 6. 在浏览器中打开页面
 
 本地 Web 服务启动后，访问 [https://127.0.0.1:8080/?room=12&name=123&dimension=240p](https://127.0.0.1:8080/?room=12&name=123&dimension=240p) 就可以看到快速入门页面。
 
 - `room` 为房间号
 - `name` 为用户昵称
-- `dimension` 清晰度
+- `dimension` 清晰度:
+    + `240p`
+    + `360p`
+    + `480p`
+    + `720p`
+    + `1080p`
 
 ## 注：
 *必须通过启动https服务器来访问页面才可使用，直接打开html无效
